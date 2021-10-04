@@ -31,7 +31,7 @@ describe("Verifying variables,cypress commands amd jquery commands", () => {
             expect(headerText).is.eq('Makeup')
         })
     });
-    it.only("Validate porperties of the contact us page", () => {
+    it("Validate porperties of the contact us page", () => {
 
         cy.visit("https://automationteststore.com/index.php?rt=content/contact");
         
