@@ -7,7 +7,7 @@ describe("Verify Autocomplete dropdown lists via webdiveruni", () => {
         cy.get('#myInputAutocomplete-list > *').each(($el, index, $list) => {
           
             const prod = $el.text();
-            const productToSelect = 'Avacado';
+            const productToSelect = 'Avocado';
 
             if (prod === productToSelect) {
                 $el.trigger("click");
