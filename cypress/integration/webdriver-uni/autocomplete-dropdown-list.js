@@ -1,13 +1,13 @@
 /// <reference types="Cypress" />
-describe("Verify Autocomplete dropdown lists via webdiveruni", () => {
+describe("Verify Autocomplete dropdown lists via webDriverUni", () => {
     it("Select specific product via autocomplete list", () => {
         cy.visit("http://www.webdriveruniversity.com");
         cy.get('#autocomplete-textfield').invoke('removeAttr', 'target').click({ force: true });
         cy.get('#myInput').type('A');
-        cy.get('#myInputAutocomplete-list > *').each(($el, index, $list) => {
+        cy.get('#myInputautocomplete-list > *').each(($el, index, $list) => {
           
             const prod = $el.text();
-            const productToSelect = 'Avocado';
+            const productToSelect = 'Avacado';
 
             if (prod === productToSelect) {
                 $el.trigger("click");
@@ -16,7 +16,7 @@ describe("Verify Autocomplete dropdown lists via webdiveruni", () => {
             }
         }).then(() => {
             cy.get('#myInput').type('G');
-            cy.get('#myInputAutocomplete-list > *').each(($el, index, $list) => {
+            cy.get('#myInputautocomplete-list > *').each(($el, index, $list) => {
                 const prod = $el.text();
                 const productToSelect = 'Grapes'
 

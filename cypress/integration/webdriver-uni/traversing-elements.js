@@ -9,7 +9,7 @@ describe("Traversing DOM elements in Cypress", () => {
   });
 
   it("closest() to validate the closest ancestor DOM element", () => {
-    cy.get('.traversal-bradge').closest('ul').should('have.class','.list-group'); 
+    cy.get('.traversal-badge').closest('ul').should('have.class','list-group'); 
   });
 
   it("eq() to retrieve a specific element based on index", () => {

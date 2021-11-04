@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-const { should } = require("chai");
+import { should } from "chai";
 
 describe("Interact with the dropdpwn-list via webdriveuni", () => {
     it("Select specific values via dropdown-list", () => {
@@ -15,5 +15,4 @@ describe("Interact with the dropdpwn-list via webdriveuni", () => {
         cy.get('dropdowm-menu-2').select('maven'),should('have.value','maven');
         cy.get('#dropdowm-menu-3').select('TestNg').contains('TestNG');
     });
-
-})
+});
