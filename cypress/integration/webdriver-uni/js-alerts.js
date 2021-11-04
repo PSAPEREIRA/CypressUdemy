@@ -37,7 +37,7 @@ describe("Handle js alerts", () => {
 
         cy.visit("http://www.webdriveruniversity.com")
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
-        cy.on('window:confirm', stub)
+        cy.on('window:confirm', stub);
         const stub = cy.stub();
 
         cy.get('#button4').click(), then(() => {
