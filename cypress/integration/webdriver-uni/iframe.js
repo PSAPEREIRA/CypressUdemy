@@ -14,7 +14,8 @@ describe("Handling Iframe & Modals", () => {
 
         cy.get('@iframe').find('#button-find-out-more').click();
 
-        cy.get('#iframe').find('myModal').as('modal')
+        cy.get('@iframe').find('#myModal').as('modal');
+
         cy.get('@modal').should(($expectedText) => {
             const text = $expectedText.text()
             expect(text).to.include('Welcome to webdriveruniversity.com');

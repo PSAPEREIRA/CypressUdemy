@@ -3,12 +3,12 @@
 describe("Handle js alerts", () => {
     it("Confirm js alert contains the correct text", () => {
 
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
+        cy.visit("http://www.webdriveruniversity.com");
+        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true });
 
         cy.get('#button1').click();
         cy.on('window:alert', (str) => {
-            expect(str).to.equal.apply('I am an alert box!')
+            expect(str).to.equal('I am an alert box!');
         })
     });
     it("Validate js confirm alert box works correctly", () => {
@@ -37,11 +37,12 @@ describe("Handle js alerts", () => {
 
         cy.visit("http://www.webdriveruniversity.com")
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
-        cy.on('window:confirm', stub);
+        
         const stub = cy.stub();
-
-        cy.get('#button4').click(), then(() => {
-            expect(stub.getCall(0)).to.be.calledWith('Press a button')
+        cy.on('window:confirm', stub);
+        
+        cy.get('#button4').click().then(() => {
+            expect(stub.getCall(0)).to.be.calledWith('Press a button!')
         }).then(() => {
             return true;
         }).then(() => {

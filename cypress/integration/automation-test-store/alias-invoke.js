@@ -21,7 +21,7 @@ describe("Alias and invoke", () => {
             .should('include', 'Add to Cart');
     });
 
-    it.only("Calculate total of normal and sale products", () => {
+    it("Calculate total of normal and sale products", () => {
 
         cy.visit("https://www.automationteststore.com/");
         cy.get('.thumbnail').as('productThumbnail');
