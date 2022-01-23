@@ -24,7 +24,17 @@ Cypress.Commands.add("selectProduct", productName => {
         if ($el.text().includes(productName)) {
             cy.wrap($el).click();
         }
-    }); 
+    });
+})
+
+Cypress.Commands.add("webDriverUni_ContactForm_Submission", (firstName, lastName, email, comment, $selector, textToLocate) => {
+
+    cy.get('[name="first_name"]').type(firstName) // using fixtures
+    cy.get('[name="last_name"]').type(lastName)
+    cy.get('[name="email"]').type(email)
+    cy.get('textarea.feedback-input').type(comment)
+    cy.get('[type="submit"]').click();
+    cy.get($selector).contains(textToLocate);
 })
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
